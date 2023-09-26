@@ -1,0 +1,32 @@
+# Node.js dependencies
+node_modules/
+
+# Logs
+logs
+*.log
+
+# Environment files
+.env
+
+# Visual Studio Code settings (if using VS Code)
+.vscode/
+
+# Dependency directories
+.pnpm/
+.pnpm-debug.log*
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+
+# Editor-specific files
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# Testing directories
+coverage/
