@@ -4,10 +4,12 @@ const mongoose = require('mongoose');
 const app = express();
 const cors = require('cors');
 require('dotenv').config();
+const cookieParser = require('cookie-parser')
 const port = process.env.PORT || 3000;
 
 app.use(cors());
 app.use(bodyParser.json());
+app.use(cookieParser());
 
 try {
     // Connect to MongoDB using the URL provided in the .env file

@@ -1,9 +1,11 @@
 const jwt = require('jsonwebtoken');
+const cookieParser = require('cookie-parser'); // Import cookie-parser
 require('dotenv').config();
 const secretKey = process.env.SECRETKEY;
 
 function authenticate(req, res, next) {
-    const token = req.header('Authorization');
+    const token = req.cookies.jwt;
+
     if (!token) {
         return res.status(401).json({ message: 'Authentication failed' });
     }

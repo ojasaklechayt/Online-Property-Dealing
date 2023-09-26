@@ -69,9 +69,10 @@ const deleteProperty = async (req, res) => {
             return res.status(403).json({ message: 'You are not the owner of this property' });
         }
 
-        await existingProperty.remove();
-        res.json({ message: 'Property deleted' });
+        await Property.deleteOne({ _id: propertyId });
+        res.json({ message: 'Property deleted successfully' });
     } catch (error) {
+        console.log(error);
         res.status(500).json({ message: 'Internal server error' });
     }
 };
