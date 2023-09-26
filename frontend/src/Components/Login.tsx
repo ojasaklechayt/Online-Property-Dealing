@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
 
-const Login: React.FC = () => {
+interface LoginProps {
+    setLoggedin: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+const Login: React.FC<LoginProps> = ({ setLoggedin }) => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
@@ -22,10 +26,11 @@ const Login: React.FC = () => {
 
             if (response.ok) {
                 // Login was successful
+
                 window.alert("Login Successful")
                 const data = await response.json();
                 console.log('Login successful:', data);
-
+                setLoggedin(true);
                 // Optionally, you can redirect the user to another page upon successful login
                 // For example: window.location.href = '/dashboard';
             } else {
