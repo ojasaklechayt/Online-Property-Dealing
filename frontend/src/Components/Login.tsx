@@ -22,6 +22,7 @@ const Login: React.FC = () => {
 
             if (response.ok) {
                 // Login was successful
+                window.alert("Login Successful")
                 const data = await response.json();
                 console.log('Login successful:', data);
 
@@ -29,6 +30,7 @@ const Login: React.FC = () => {
                 // For example: window.location.href = '/dashboard';
             } else {
                 // Login failed
+                window.alert("Login Failed")
                 const errorData = await response.json();
                 console.error('Login failed:', errorData);
             }
